@@ -1,15 +1,23 @@
 <template>
   <div>
-    <h1>Image Converter</h1>
-    <TaskList></TaskList>
+    <h1 style="text-align:center">Image Converter</h1>
+    <InputFile></InputFile>
+    <Task v-for="(image, index) in images" :image="image" :key="index"></Task>
   </div>
 </template>
 
 <script>
-import TaskList from '@/components/TaskList.vue'
+import InputFile from '@/components/InputFile.vue'
+import Task from '@/components/Task.vue'
 export default {
   components: {
-    TaskList
+    InputFile,
+    Task
+  },
+  computed: {
+    images() {
+      return this.$store.getters.allImages
+    }
   }
 }
 </script>

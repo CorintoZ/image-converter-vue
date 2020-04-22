@@ -9,7 +9,8 @@ const routes = [
     path: '/',
     name: 'Converter',
     component: Converter
-  }
+  },
+  { path: '*', redirect: '/' }
 ]
 
 const router = new VueRouter({
