@@ -24,6 +24,7 @@ app.post('/photos/upload', async (req, res) => {
   const photo = req.files.image
   console.log(photo.data)
   res.setHeader('Content-Type', 'application/x-www-form-urlencoded')
+  res.setHeader('Content-Disposition', 'attachment; filename=cashback.jpg')
   const jpgPhoto = await sharp(photo.data)
     .jpeg()
     .toBuffer()

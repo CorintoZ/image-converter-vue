@@ -37,12 +37,12 @@ export default {
     download() {
       // Create a download event
       var fileLink = document.createElement('a')
-      fileLink.href = this.image.name
-      fileLink.setAttribute('download', this.image.name)
+      fileLink.href = this.image.data
+      fileLink.setAttribute('Download', this.image.name.replace('png', 'jpg'))
+      fileLink.setAttribute('target', '_blank')
       document.body.appendChild(fileLink)
 
       fileLink.click()
-      fileLink.remove()
     },
     cancel() {
       this.$props.image.rq.cancel()

@@ -43,7 +43,6 @@ export default new Vuex.Store({
         })
         .catch(function(thrown) {
           if (axios.isCancel(thrown)) {
-            console.log(getters.getImage(name))
             commit('CANCEL_REQ', name)
           } else {
             console.log('cancel ', thrown)
